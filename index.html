@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simulador de Dinámica</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="diagram">
+            <div class="diagram-content">
+                <div class="horizontal-bar"></div>
+                <div class="vertical-bar"></div>
+                <div class="pulley"></div>
+                <div class="rope-horizontal"></div>
+                <div class="rope"></div>
+                <div class="block-M">M</div>
+                <div class="block-m">m</div>
+                <div class="rope-vertical"></div>
+            </div>
+        </div>
+        <div class="input-box" id="input-box">
+            <div>
+                m₁ = <input type="number" id="mass1" value="3.0" step="0.01"> kg
+            </div>
+            <div>
+                m₂ = <input type="number" id="mass2" value="2.5" step="0.01"> kg
+            </div>
+            <div>
+                μ = <input type="number" id="friction" value="0.2" step="0.01">
+            </div>
+            <div>(Coeficiente de fricción)</div>
+            <button class="button" onclick="calculate()">Evaluar</button>
+        </div>
+        <div class="result-box" id="result-box">
+            <h2>Resultado</h2>
+            <div id="tension-result">Tensión: -</div>
+            <div id="acceleration-result">Aceleración: -</div>
+        </div>
+        <div class="dcl-container">
+            <div class="dcl">
+                <div class="dcl-diagram">
+                    <h3 class="dcl-title">DCL 1</h3>
+                    <div class="svg-container">
+                        <svg id="dcl1" xmlns="http://www.w3.org/2000/svg">
+                            <!-- DCL para la masa m1 -->
+                            <!-- Fuerza gravitatoria -->
+                            <line x1="80" y1="100" x2="80" y2="140" class="dcl-line" stroke="blue"></line>
+                            <text x="70" y="125" class="dcl-label" fill="blue">P = m₁g</text>
+
+                            <!-- Fuerza normal -->
+                            <line x1="80" y1="100" x2="80" y2="60" class="dcl-line" stroke="green"></line>
+                            <text x="70" y="75" class="dcl-label" fill="green">N</text>
+
+                            <!-- Tensión -->
+                            <line x1="80" y1="100" x2="150" y2="100" class="dcl-line" stroke="red"></line>
+                            <text x="115" y="115" class="dcl-label" fill="red">T</text>
+
+                            <!-- Fuerza de rozamiento -->
+                            <line x1="80" y1="100" x2="10" y2="100" class="dcl-line" stroke="orange"></line>
+                            <text x="25" y="115" class="dcl-label" fill="orange">Fr</text>
+
+                            <!-- Movimiento -->
+                            <line x1="80" y1="50" x2="150" y2="50" class="dcl-line" stroke="purple" marker-end="url(#arrowhead)"></line>
+                            <text x="115" y="45" class="dcl-label" fill="purple">mov</text>
+
+                            <defs>
+                                <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+                                    <polygon points="0 0, 10 3.5, 0 7" fill="purple"></polygon>
+                                </marker>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="dcl-sum">
+                        <div class="dcl-text">
+                            ∑F<sub>x</sub> = m₁⋅a<br>
+                            T − Fr = m₁⋅a<br>
+                            Fr = μ⋅N = μ⋅m₁⋅g<br>
+                            T − μ⋅m₁⋅g = m₁⋅a
+                        </div>
+                        <div class="dcl-text">
+                            ∑F<sub>y</sub> = 0<br>
+                            N - P = 0<br>
+                            N = P = m₁⋅g
+                        </div>
+                    </div>
+                </div>
+                <div class="dcl-diagram">
+                    <h3 class="dcl-title">DCL 2</h3>
+                    <svg id="dcl2" xmlns="http://www.w3.org/2000/svg">
+                        <!-- DCL para la masa m2 -->
+                        <!-- Fuerza gravitatoria -->
+                        <line x1="80" y1="100" x2="80" y2="140" class="dcl-line" stroke="blue"></line>
+                        <text x="70" y="125" class="dcl-label" fill="blue">P = m₂g</text>
+
+                        <!-- Tensión -->
+                        <line x1="80" y1="100" x2="80" y2="60" class="dcl-line" stroke="red"></line>
+                        <text x="70" y="75" class="dcl-label" fill="red">T</text>
+
+                        <!-- Movimiento -->
+                        <line x1="130" y1="80" x2="130" y2="110" class="dcl-line" stroke="purple" marker-end="url(#arrowhead2)"></line>
+                        <text x="135" y="115" class="dcl-label" fill="purple">mov</text>
+
+                        <defs>
+                            <marker id="arrowhead2" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" fill="purple"></polygon>
+                            </marker>
+                        </defs>
+                    </svg>
+                    <div class="dcl-text">
+                        ∑F<sub>y</sub> = m₂⋅a<br>
+                        m₂⋅g − T = m₂⋅a
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

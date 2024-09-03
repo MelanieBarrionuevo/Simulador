@@ -1,0 +1,216 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e6f2ff;
+}
+.container {
+    position: relative;
+    width: 90%;
+    height: 90%;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+}
+.diagram {
+    position: relative;
+    width: 450px; /* Increased width */
+    height: 350px; /* Increased height */
+    margin: 40px 0 40px 0; /* Adjusted margin to lower the diagram and maintain distance */
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.diagram-content {
+    position: relative;
+    width: 250px; /* Adjusted width */
+    height: 200px; /* Adjusted height */
+}
+.horizontal-bar {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 200px;
+    height: 10px;
+    background-color: #000;
+}
+.vertical-bar {
+    position: absolute;
+    top: 70px;
+    left: 200px;
+    width: 10px;
+    height: 70px;
+    background-color: #000;
+}
+.pulley {
+    position: absolute;
+    top: 55px;
+    left: 215px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    background-color: #808080;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+}
+.rope {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 140px;
+    height: 2px;
+    background-color: #000;
+}
+.rope-vertical {
+    position: absolute;
+    top: 55px;
+    left: 220px;
+    width: 2px;
+    height: 95px;
+    background-color: #000;
+}
+.rope-horizontal {
+    position: absolute;
+    top: 55px;
+    left: 140px;
+    width: 75px;
+    height: 2px;
+    background-color: #000;
+}
+.block-M {
+    position: absolute;
+    top: 40px;
+    left: 100px;
+    width: 40px;
+    height: 30px;
+    background-color: #ffcc00;
+    border: 2px solid #000;
+    z-index: 10;
+    text-align: center;
+    line-height: 30px;
+    font-size: 20px;
+}
+.block-m {
+    position: absolute;
+    top: 150px;
+    left: 210px;
+    width: 40px;
+    height: 30px;
+    background-color: #00ccff;
+    border: 1px solid #000;
+    text-align: center;
+    line-height: 30px;
+    font-family: Arial, sans-serif;
+}
+.input-box {
+    position: absolute;
+    top: 50px; /* Adjusted top to lower the input box */
+    left: 500px;
+    right: 20px; /* Ensures the box stretches to the right edge */
+    height: 200px;
+    background-color: #ffebcc;
+    border: 2px solid #ff9900;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 30px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.button {
+    width: 80px;
+    height: 30px;
+    background-color: #00ccff;
+    border: none;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 20px; /* Decreased margin-top to raise the button */
+}
+.result-box {
+    position: absolute;
+    top: 290px; /* Adjusted top to raise the result box */
+    left: 500px;
+    right: 20px; /* Ensures the box stretches to the right edge */
+    height: 120px;
+    background-color: #e6f7ff;
+    border: 2px solid #3399ff;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 30px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.result-box h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+.dcl-container {
+    position: absolute;
+    top: 450px; /* Adjusted top to maintain distance */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    padding: 20px;
+    background-color: #ffffcc;
+    border: 2px solid #ff9900;
+    border-radius: 10px;
+    text-align: center;
+    box-sizing: border-box;
+}
+.dcl {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.dcl-diagram {
+    width: 45%;
+    height: 250px;
+    border: 1px solid #000;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.dcl-text {
+    font-size: 14px;
+    font-weight: bold;
+}
+.dcl-line {
+    stroke-width: 2;
+}
+.dcl-label {
+    font-size: 12px;
+    font-weight: bold;
+}
+.dcl-sum {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.svg-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.dcl-title {
+    margin-bottom: 5px;
+    margin-top: -20px;
+    text-align: center;
+    width: 100%;
+    border-bottom: none;
+    background-color: #ffffcc;
+}
